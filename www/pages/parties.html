@@ -1,0 +1,36 @@
+<div class="card item-text-wrap">
+    <div class="item item-divider item-positive">
+        {{messages.parties.start}}
+    </div>
+    <div class="item">
+        {{messages.parties.startInfo}}
+    </div>
+</div>
+
+<div class="card">
+    <div class="item item-input">
+        <span class="input-label">{{messages.parties.title}}</span>
+	    <input type="text">
+    </div>
+    <div class="item item-input">
+        <span class="input-label">{{messages.parties.message}}</span>
+	    <input type="text">
+    </div>
+    <div class="item item-input" ng-click="getLocation()">
+        <span class="input-label">Location</span>
+	    <ui-gmap-google-map center='map.center' zoom='map.zoom' dragging='false'>
+	    	<ui-gmap-marker
+				idkey="marker.id"
+				coords='marker.coords'
+				>
+			</ui-gmap-marker>
+	    </ui-gmap-google-map>
+    </div>
+    <div class="item" ng-click="takePicture()">
+        <span class="input-label">{{messages.parties.picture}}</span>
+        <!--<div syle="background: URL({})"></div>-->
+    </div>    
+    <div class="item item-positive shareBtn" ng-click="shareParty()">
+        {{messages.parties.share}}
+    </div>
+</div>

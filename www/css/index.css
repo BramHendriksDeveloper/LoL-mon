@@ -1,0 +1,31 @@
+.scroll-bar-indicator
+{
+	display: none !important;
+}
+
+.detailImage{
+    width: 100%;
+}
+
+.prevImage{
+    width: 50%;
+    margin-right: 50%;
+}
+
+.nextImage{
+    width: 50%;
+    margin-left: 50%;
+}
+
+.card .item-divider{
+    text-align: center;
+}
+
+.shareBtn{
+    text-align: right;
+}
+
+.angular-google-map-container { 
+	height: 300px;
+	width:300px;
+}

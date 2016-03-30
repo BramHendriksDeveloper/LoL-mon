@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="item item-divider item-positive">
+        {{messages.champion.info}}
+    </div>
+    <div class="item">
+        <div class="row">
+            <div class="col col-67 item-text-wrap">
+                <h3>{{champion.name}} - {{champion.title}}</h3>
+                <p class="animate-hide" ng-show="checked" ng-bind-html="champion.blurb"></p>
+                <p class="animate-hide" ng-hide="checked" ng-bind-html="champion.lore"></p>
+                <button class="animate-hide button button-positive" ng-show="checked" ng-click="toggleBlob()">{{messages.champion.showMore}}</button>
+                <button class="animate-hide button button-positive" ng-hide="checked" ng-click="toggleBlob()">{{messages.champion.showLess}}</button>
+            </div>
+            <div class="col col-33">
+                <img class="detailImage" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champion.key}}_0.jpg"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="item item-divider item-positive">
+        {{messages.champion.spells}}
+    </div>
+    <div class="item" ng-repeat="spell in champion.spells">
+        <div class="row">
+        	<div class="col col-20">
+                <img style="
+                	width:48px; 
+                	height:48px; 
+                	background: url('img/{{spell.image.sprite}}') 
+                		-{{spell.image.x}}px 
+                		-{{spell.image.y}}px;
+                "/>
+            </div>
+            <div class="col col-33 item-text-wrap">
+                <h3>{{spell.name}}</h3>
+                <p>Cost: {{spell.cost}}</p>
+                <p>Cooldown: {{spell.cooldown}}</p>
+            </div>
+            <div class="col col-50 item-text-wrap">
+                <h3>{{spell.description}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

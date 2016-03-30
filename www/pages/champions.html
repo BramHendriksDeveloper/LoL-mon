@@ -1,0 +1,21 @@
+<ul class="list" scrollbar-y="false">
+    <label class="item item-input">
+        <span class="input-label">{{messages.champions.search}}</span>
+        <input type="text" ng-model="searchChamp">
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            {{messages.champions.order}}
+        </div>
+        <select ng-model="orderBy">
+            <option value="name" selected>A-Z</option>
+            <option value="-name">Z-A</option>
+        </select>
+	</label>
+    <ion-toggle class="item" ng-model="freeBool" toggle-class="toggle-positive">{{messages.champions.free2play}}</ion-toggle>
+    <a class="item item-avatar" ng-repeat="champion in champions | filter:searchChamp | orderBy:orderBy | freeFilter:freeList:freeBool" ng-click="toChampion(champion.id, champion.name)">
+      <img style="width:48px; height:48px; background: url('img/{{champion.image.sprite}}') -{{champion.image.x}}px -{{champion.image.y}}px;"/>
+      <h2>{{champion.name}}</h2>
+      <p>{{champion.title}}</p>
+    </a>
+</ul>
